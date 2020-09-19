@@ -1,0 +1,144 @@
+*{
+margin: 0;
+padding: 0;
+
+
+
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: rgb(22, 22, 48);
+}
+.container{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 1200px;
+    transform-style: preserve-3d;
+}
+.container .box{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 40px;
+    background: #22054b;
+border-top-left-radius: 20px;
+}
+.container .box::before{
+    content: 'NIKE';
+    position: absolute ;
+    top: 20px;
+    left: 20px;
+    font-size: 6em;
+    font-weight: 900;
+    color: white;
+ 
+    opacity: 0;
+    transition: 0.5s;
+}
+.container .box:hover::before{
+
+    opacity: .05;
+   
+}
+.container .box::after{
+    content: 'SHOE';
+    position: absolute ;
+    bottom: 20px;
+    left: 20px;
+    font-size: 6em;
+    font-weight: 900;
+    color: white;
+;
+    opacity: 0;
+    transition: .5s;
+
+}
+.container .box:hover::after{
+    opacity: .05;
+
+}
+.container .box .name{
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-align:center;
+    color: rgb(199, 235, 251);
+    width: 100%;
+    transform: translate3d(0,0,80px);
+    transition: .5s;
+    opacity: 0;
+    z-index: 10;
+    font-size: 30px; 
+}
+.container .box:hover .name{
+    top: 40px;
+    opacity: 1;
+
+}
+.container .box .buy{  /* space dena jaruri h*/
+    position: absolute;
+    bottom: 0;
+    left:30%;
+    transform-style: preserve-3d;
+    transform: translate(-50%,0,75px);
+    color: white;
+    background:rgb(147, 80, 224);
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration:none;
+    transition: 0.5s;
+    opacity: 0;   /* gayab ho and aya baad m*/
+    z-index: 10;
+
+}
+.container .box:hover .buy{
+    bottom: 30px;
+    opacity: 1;
+
+}
+.container .box .circle{
+    position: absolute;
+    top:30%;
+ left: 20%;
+    width:160px;
+    height:160px;
+    border-radius: 50%;
+    transition: .5s;
+    background: white;
+    transform-style: preserve-3d;
+    transform: translate3d(-30%,-30% px); /* x,y ,z axis m transition animation*/
+    z-index: 10;
+ opacity: 1;
+}
+.container .product{
+
+    position: absolute;
+    top:30%;
+   left: 30%;
+    max-width:260px;
+    transition: .5s;
+    z-index: 11;
+    opacity: 1;
+    transition: .5s;
+    transform-style: preserve-3d;
+    transform: translate3d(-30%,-30%,0px) rotate(-25deg);
+
+}
+.container .box:nth-child(1) .circle,
+.container .box:nth-child(1) .buy{
+    background: rgb(253, 66, 66);
+
+}
+.container .box:nth-child(2) .circle, /* nth 2 means dusra same nam k dusro p apply hoga */
+.container .box:nth-child(2) .buy{
+    background:rgb(33, 197, 156)
+
+}.container .box:nth-child(3) .circle
+{
+    background:rgb(54, 194, 66) }
